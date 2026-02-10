@@ -1,0 +1,63 @@
+{
+  "resolutions": [
+    {
+      "name": "Best Quality (MKV - 4K/8K Support)",
+      "type": "video",
+      "args": ["-f", "bestvideo+bestaudio/best", "--merge-output-format", "mkv"]
+    },
+    {
+      "name": "Standard Quality (MP4 - Max 1080p)",
+      "type": "video",
+      "args": [
+        "-f",
+        "bestvideo[height<=1080]+bestaudio/best[height<=1080]",
+        "--merge-output-format",
+        "mp4"
+      ]
+    },
+    {
+      "name": "Audio Only (MP3 - High Quality)",
+      "type": "audio",
+      "args": [
+        "-f",
+        "bestaudio/best",
+        "--extract-audio",
+        "--audio-format",
+        "mp3",
+        "--audio-quality",
+        "0"
+      ]
+    }
+  ],
+  "features": [
+    {
+      "key": "thumbnail",
+      "name": "Embed Thumbnail / Cover Art",
+      "compatible_types": ["video", "audio"],
+      "args": ["--embed-thumbnail"]
+    },
+    {
+      "key": "metadata",
+      "name": "Add Metadata (Artist/Title)",
+      "compatible_types": ["video", "audio"],
+      "args": ["--add-metadata"]
+    },
+    {
+      "key": "subtitles",
+      "name": "Download Subtitles (En/Vi)",
+      "compatible_types": ["video"],
+      "args": ["--write-auto-sub", "--sub-lang", "en,vi", "--embed-subs"]
+    },
+    {
+      "key": "sponsorblock",
+      "name": "Remove Sponsor (SponsorBlock)",
+      "compatible_types": ["video", "audio"],
+      "args": ["--sponsorblock-remove", "sponsor,intro,outro,selfpromo"]
+    }
+  ],
+  "settings": {
+    "output_template": "%(title)s [%(id)s].%(ext)s",
+    "download_dir": "downloads",
+    "ffmpeg_location": "C:\\Users\\Foggo\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.0.1-full_build\\bin\\ffmpeg.exe"
+  }
+}

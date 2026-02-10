@@ -1,0 +1,14 @@
+# Binaries
+yt-dlp.exe
+__pycache__/
+
+# Downloads
+downloads/
+*.webm
+*.mp4
+*.mkv
+*.mp3
+
+# Build/Env
+.venv
+env/
